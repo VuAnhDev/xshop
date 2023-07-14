@@ -11,7 +11,7 @@ if(isset($_POST['login'])){
     $sql = "SELECT username, password, level FROM user WHERE username = '$username' AND password = '$password'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
-
+      $_SESSION["user"] = $username;
       while($row = mysqli_fetch_assoc($result)) {
         $level = $row['level'];
         if($level==0){
@@ -20,12 +20,13 @@ if(isset($_POST['login'])){
 
           echo'dang nhap thanhcong';
       
-          header('location:../index.php');
+          header('location:../index.php?in');
         }
       }
         
       } else {
-        echo "0 results";
+        $_SESSION["thongBaoDN"] = "Sai tên ĐN hoặc MK";
+        header('location:../index.php?login');
       }
       $conn->close();
 }

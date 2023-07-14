@@ -1,18 +1,24 @@
 <?php
-
+session_start();
 require('../model/config/config.php');
 require('../model/config/conection.php');
 
 $username = '';
 $password = '';
+$repassword= '';
 $phone = '';
 
 if(isset($_POST['register'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $repassword = $_POST['repassword'];
     $phone = $_POST['phone'];
     
+    if($password != $repassword){
+        $_SESSION["thongBaoDK"] = "Mật khẩu nhập lại không chính xác";
+        header("location:../index.php");      
 
+    }
     $sql = "INSERT INTO `user`(`username`, `password`, `phone`) VALUES ('$username','$password','$phone')";
 
     if ($conn->query($sql) === TRUE) {

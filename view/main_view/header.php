@@ -1,5 +1,6 @@
 <header>
     <?php
+    session_start();
     include_once("view/main_view/pages/login.php");
     include_once("view/main_view/pages/register.php");
     include_once("view/main_view/pages/cart.php");
@@ -8,7 +9,7 @@
         echo "
         <script>
         document.getElementById('id01').style.display='block';
-</script>";
+        </script>";
     }
     ?>
     <div class="box">
@@ -32,11 +33,12 @@
 
         </div>
         <div class="shop">
-            <a onclick="document.getElementById('id02').style.display='block'" style="width:auto;">
+
+            <a id="btn-login" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">
                 <i class="fa-solid fa-user-plus"></i>
                 <div class="title">Đăng ký</div>
             </a>
-            <a onclick="document.getElementById('id01').style.display='block'" style="width:auto;"> <i class="fa-regular fa-user"></i>
+            <a id="btn-logout" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"> <i class="fa-regular fa-user"></i>
                 <div class="title">Đăng Nhập</div>
             </a>
             <a onclick="document.getElementById('cart').style.display='block'" style="width:auto;"> <i class="fa-solid fa-cart-shopping"></i>
@@ -46,3 +48,4 @@
         </div>
     </div>
 </header>
+<script></script>

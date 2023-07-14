@@ -19,10 +19,6 @@
     include_once('view/main_view/main.php');
     include_once('view/main_view/footer.php');
     ?>
-
-
-
-
     <link rel="stylesheet" href="view/scriptcart.js">
 </body>
 
