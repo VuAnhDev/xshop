@@ -1,0 +1,28 @@
+ul.admin-menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+.admin-menu .admin-menu-item {
+    padding: 10px 20px;
+    color: #000;
+    font-size: large;
+    font-weight: bold;
+}
+.admin-menu .admin-menu-item a {
+    text-decoration: none;
+    color: #000000;
+}
+.admin-menu .admin-menu-item.active{
+    color: #000000;
+    background-color: #fcb116;
+    border-radius: 5px;
+}
+.admin-menu .admin-menu-item:hover {
+    color: #000000;
+    background-color: #fcb116;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+  
