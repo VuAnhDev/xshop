@@ -26,3 +26,9 @@ ul.admin-menu {
     transition: 0.3s;
 }
   
+.admin-content .fcontent {
+    display: none;
+}
+.admin-content .fcontent.active {
+    display: block;
+}
