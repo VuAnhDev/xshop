@@ -5,9 +5,9 @@
     </div>
     <div class="main">
         <div class="slide">
-            <img class="mySlides" src="view/img/banner1.jpg">
-            <img class="mySlides" src="view/img/banner2.jpg">
-            <img class="mySlides" src="view/img/banner3.jpg">
+            <img class="mySlides" src="public/img/banner1.jpg">
+            <img class="mySlides" src="public/img/banner2.jpg">
+            <img class="mySlides" src="public/img/banner3.jpg">
         </div>
 
         <script>

@@ -1,6 +1,8 @@
 <?php
-require('../model/config/config.php');
-require('../model/config/conection.php');
+
+session_start();
+require('../../model/config/config.php');
+require('../../model/config/conection.php');
 
 $username = '';
 $password = '';
@@ -15,18 +17,18 @@ if(isset($_POST['login'])){
       while($row = mysqli_fetch_assoc($result)) {
         $level = $row['level'];
         if($level==0){
-          header('location:../index.php?page=admin');
+          header('location:../../index.php?page=admin');
         } else {
 
           echo'dang nhap thanhcong';
       
-          header('location:../index.php?in');
+          header('location:../../index.php?in');
         }
       }
         
       } else {
         $_SESSION["thongBaoDN"] = "Sai tên ĐN hoặc MK";
-        header('location:../index.php?login');
+        header('location:../../index.php?login');
       }
       $conn->close();
 }

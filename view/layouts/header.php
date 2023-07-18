@@ -1,9 +1,10 @@
 <header>
     <?php
     session_start();
-    include_once("view/main_view/pages/login.php");
-    include_once("view/main_view/pages/register.php");
-    include_once("view/main_view/pages/cart.php");
+    include_once("view/layouts/login.php");
+    include_once("view/layouts/register.php");
+    include_once("view/layouts/cart.php");
+    
 
     if(isset($_GET['login'])){
         echo "
@@ -14,7 +15,7 @@
     ?>
     <div class="box">
         <div class="logo">
-           <a href="index.php"> <img src="view/img/logo.png"></a>
+           <a href="index.php"> <img src="public/img/logo.png"></a>
         </div>
         <div class="menu">
             <ul>
@@ -33,12 +34,18 @@
 
         </div>
         <div class="shop">
-
-            <a id="btn-login" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">
+            <?php
+                if(isset($_SESSION['user'])){
+                      echo`
+                      
+                      `    ;     
+                }
+            ?>
+            <a id="btn-log1" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">
                 <i class="fa-solid fa-user-plus"></i>
                 <div class="title">Đăng ký</div>
             </a>
-            <a id="btn-logout" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"> <i class="fa-regular fa-user"></i>
+            <a id="btn-log2" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"> <i class="fa-regular fa-user"></i>
                 <div class="title">Đăng Nhập</div>
             </a>
             <a onclick="document.getElementById('cart').style.display='block'" style="width:auto;"> <i class="fa-solid fa-cart-shopping"></i>
@@ -48,4 +55,3 @@
         </div>
     </div>
 </header>
-<script></script>

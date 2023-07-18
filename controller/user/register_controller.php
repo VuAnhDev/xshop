@@ -1,7 +1,7 @@
 <?php
 session_start();
-require('../model/config/config.php');
-require('../model/config/conection.php');
+require('../../model/config/config.php');
+require('../../model/config/conection.php');
 
 $username = '';
 $password = '';
@@ -27,7 +27,7 @@ if(isset($_POST['register'])){
         setInterval(locationhome, 2000);
         
         function locationhome() {
-          window.location = '../index.php?login';
+          window.location = '../../index.php?login';
           
         }  
         </script>";

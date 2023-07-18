@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="img">
-            <img src="view/img/products/3.png" alt="">
+            <img src="public/img/products/3.png" alt="">
         </div>
         <div class="option">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -36,7 +36,7 @@
     <h2>Có thể bạn quan tâm</h2>
     <a href="?page=details">
         <div class="item">
-            <img src="view/img/products/5.png" alt="">
+            <img src="public/img/products/5.png" alt="">
             <div class="content">
                 <div class="title">
                     Name Shoe
@@ -48,7 +48,7 @@
         </div>
     </a>
     <div class="item">
-        <img src="view/img/products/6.png" alt="">
+        <img src="public/img/products/6.png" alt="">
         <div class="content">
             <div class="title">
                 Name Shoe
@@ -59,7 +59,7 @@
         </div>
     </div>
     <div class="item">
-        <img src="view/img/products/7.png" alt="">
+        <img src="public/img/products/7.png" alt="">
         <div class="content">
             <div class="title">
                 Name Shoe

@@ -1,11 +1,11 @@
 <div id="id01" class="modal">
 
-  <form class="modal-content animate" action="controller/login_controller.php" method="post">
+  <form class="modal-content animate" action="controller/user/login_controller.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close"
         title="Close Modal">&times;</span>
       <img src="
-      view/img/avata2.png" alt="Avatar" class="avatar">
+      public/img/avata2.png" alt="Avatar" class="avatar">
       <?php
 
       if(isset($_SESSION['thongBaoDN'])){
@@ -26,7 +26,7 @@
       <label for="password"><b>Mật Khẩu:</b></label>
       <input type="password" placeholder="Vui lòng nhập mật khẩu" name="password" required>
 
-      <button type="submit" name="login">Login</button>
+      <button class="user" type="submit" name="login">Login</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Nhớ mật khẩu
       </label>

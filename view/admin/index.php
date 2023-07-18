@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="view/css/adminstyle.css">
+<link rel="stylesheet" href="public/css/adminstyle.css">
 <div class="admin-container" style="border: 1px solid red; width = 100%; min-height:80vh;">
 
     <ul class="admin-menu">
@@ -34,4 +34,4 @@
         
     </div>
 </div>
-<script src="view/js/admin_menu_active.js"></script>
+<script src="commons/utility/admin_menu_active.js"></script>
