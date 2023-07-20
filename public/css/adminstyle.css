@@ -91,6 +91,15 @@ width: 25%;
 height: 20%;
 }
 
+.messs {
+    text-align: center;
+    font-size: xx-large;
+    font-family: monospace;
+    font-weight: bolder;
+    color: var(--main-color);
+    text-shadow: 10px -10px 50px var(--main-color);
+}
+
 
 /*=============================MODAL================*/
 
@@ -104,3 +113,36 @@ height: 20%;
     height: 100vh;
     background-color: rgba(0,0,0,0.4);
 }
+
+.add-form {
+    width: 50%;
+    background-color: var(--backgroundcolor-main);
+    margin:10% auto ;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .add-form .title{
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: monospace;
+    padding: 20px;
+
+  }
+  .add-form input{
+    text-align: left;
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    width: 80%;
+    border-radius: 10px;
+  }
+  .add-form button {
+    width: 50%;
+    margin: auto;
+  }
