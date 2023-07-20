@@ -6,7 +6,7 @@
       <img src="public/img/avata.png" alt="Avatar" class="avatar">
       <?php
 
-      if (isset($_SESSION['thongBaoDK'])) {
+      if (isset($_SESSION['thongbao'])) {
         echo "<script>
             document.getElementById('id02').style.display='block'
             </script>";

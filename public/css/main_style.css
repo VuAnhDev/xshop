@@ -8,6 +8,7 @@ a {
 }
 a:hover{
     cursor: pointer;
+    color: #000;
 }
 body {
     background-color: var(--backgroundcolor-main);
@@ -47,11 +48,15 @@ header  .shop {
     margin-right: 3px;
 }
 header  .shop a {
-    text-align: center;padding-top: 5px;  
+    padding-top: 5px;  
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 header .shop .title{
-    font-size: smaller;
-    display: inline-flex;
+    font-size: smaller; 
 }
 header .menu {
     justify-content: center;

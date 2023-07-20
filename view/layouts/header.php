@@ -35,23 +35,33 @@
         </div>
         <div class="shop">
             <?php
-                if(isset($_SESSION['user'])){
-                      echo`
+                 if(isset($_SESSION['user'])){
+                      echo'
                       
-                      `    ;     
+                      <a onclick="oCart()" style="width:auto;"> 
+                      <i class="fa-solid fa-cart-shopping"></i>
+                      <div class="title">Giỏ Hàng</div>
+                      </a>
+                      
+                      <a href="model/logout.php">
+                        <i class="fa-regular fa-user"></i>
+                        <div class="title">Đăng Xuất</div>
+                       </a>
+                      '   ;     
                 }
-            ?>
-            <a id="btn-log1" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">
-                <i class="fa-solid fa-user-plus"></i>
-                <div class="title">Đăng ký</div>
-            </a>
-            <a id="btn-log2" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"> <i class="fa-regular fa-user"></i>
-                <div class="title">Đăng Nhập</div>
-            </a>
-            <a onclick="document.getElementById('cart').style.display='block'" style="width:auto;"> <i class="fa-solid fa-cart-shopping"></i>
-            <div class="title">Giỏ Hàng</div>
-            </a>
-           
+                else{
+                    echo '
+                    <a id="btn-log1" onclick="oRegister()" style="width:auto;">
+                      <i class="fa-solid fa-user-plus"></i>
+                      <div class="title">Đăng ký</div>
+                     </a>
+                    <a id="btn-log2" onclick="oLogin()" style="width:auto;"> 
+                        <i class="fa-regular fa-user"></i>
+                        <div class="title">Đăng Nhập</div>
+                    </a>
+                    ';
+                }
+            ?>                                          
         </div>
     </div>
 </header>

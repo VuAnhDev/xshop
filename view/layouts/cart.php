@@ -209,7 +209,6 @@
 </div>
 
 </div>
-<link rel="stylesheet" href="scriptcart.js">
 <script>
 // Get the modal
 var modal = document.getElementById('cart');

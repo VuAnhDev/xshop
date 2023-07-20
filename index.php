@@ -19,6 +19,8 @@
     include_once('controller/controllayouts.php');
     include_once('view/layouts/footer.php');
     ?>
+
+    <script src="commons/utility/main_script.js"></script>
 </body>
 
 </html>
