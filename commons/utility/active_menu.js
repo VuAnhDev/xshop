@@ -12,8 +12,8 @@ items.forEach(item => {
             remove_active.classList.remove('active');
         })
         this.classList.add('active');
-        let show = this.attributes.name.nodeValue
-        let showContent = document.getElementsByName(show)
+        let show = this.attributes.name.nodeValue;
+        let showContent = document.getElementsByName(show);
         showContent[1].classList.add('active')
     },)
 })
