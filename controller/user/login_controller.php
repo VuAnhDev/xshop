@@ -18,8 +18,9 @@ if(isset($_POST['login'])){
         $level = $row['level'];
         if($level==0){
           header('location:../../index.php?page=admin');
+          $_SESSION['level'] = "0";
         } else {
-
+          $_SESSION['level'] = "1";
           echo'dang nhap thanhcong';
       
           header('location:../../index.php?in');

@@ -1,3 +1,13 @@
+
+<!-- if(isset($_SESSION['level']) ==="1"){
+    echo '
+    <script>
+        window.location="index.php";
+    </script>';
+    die();
+} -->
+
+
 <link rel="stylesheet" href="public/css/adminstyle.css">
 <div class="admin-container" width = 100%; min-height:80vh;>
 
@@ -59,3 +69,4 @@
         }
             ?>
 <script src="commons/utility/active_menu.js"></script>
+

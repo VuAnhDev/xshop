@@ -7,10 +7,10 @@ if (isset($_POST['update-category'])) {
   $id = $_POST['update-category'];
   $key = "category-name" . $id;
   $name = $_POST[$key];
-  $quey = "SELECT category_name FROM categorys WHERE id = $id";
+  $quey = "SELECT category_name FROM categorys WHERE id_category = $id";
   $nName = $conn->query($quey)->fetch_assoc();
   if ($name != $nName["category_name"]) {
-    $sql = "UPDATE categorys SET category_name = '$name' WHERE id = $id";
+    $sql = "UPDATE categorys SET category_name = '$name' WHERE id_category = $id";
     if ($conn->query($sql) === TRUE) {
       $_SESSION['thongbao'] = "Cập nhật thành công";
     } else {
@@ -30,7 +30,7 @@ if (isset($_POST['update-category'])) {
 
 if (isset($_POST['delete-category'])) {
   $id = $_POST['delete-category'];
-  $sql = "DELETE FROM categorys WHERE id = $id";
+  $sql = "DELETE FROM categorys WHERE id_category = $id";
   $conn->query($sql);
   $conn->close();
   $_SESSION['thongbao'] = "Xóa thành công";

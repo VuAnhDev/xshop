@@ -23,8 +23,8 @@ function execute($sql) {
 
  function getDataSQL($sql, $single=false)
  {
-	include_once('model/config/config.php');
-	include_once('model/config/conection.php');
+	include('model/config/config.php');
+	include('model/config/conection.php');
    $data = [];
 
    $result = $conn->query($sql);

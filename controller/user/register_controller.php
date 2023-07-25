@@ -16,7 +16,7 @@ if(isset($_POST['register'])){
     
     if($password != $repassword){
         $_SESSION["thongBaoDK"] = "Mật khẩu nhập lại không chính xác";
-        header("location:../index.php");      
+        header("location:../../index.php");      
 
     }
     $sql = "INSERT INTO `user`(`username`, `password`, `phone`) VALUES ('$username','$password','$phone')";

@@ -22,7 +22,7 @@ $data = getDataSQL($sql);
     <?php
     $i = 0;
     foreach ($data as $item) {
-      $id = $item['id'];
+      $id = $item['id_category'];
       $name = $item['category_name'];
       $i++;
       echo '

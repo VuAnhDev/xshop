@@ -22,8 +22,14 @@
                 <a href="index.php">
                     <li class="active">Trang Chủ</li>
                 </a>
-                <a href="?page=danhsach">
-                    <li>Danh Sách Sản Phẩm</li>
+                <a href="?page=danhsach" >
+                    <li>
+                        Danh sách sản phẩm
+                        <ul class="cate-list">
+
+                        </ul>
+                    
+                    </li>   
                 </a>
                 <a href="?page=contact">
                     <li>Liên Hệ</li>
@@ -36,15 +42,27 @@
         <div class="shop">
             <?php
                  if(isset($_SESSION['user'])){
+                    if($_SESSION['level'] === '0'){
+                        $tempHref = "index.php?page=admin";
+                    }
+                    else
+                    {
+                        $tempHref = "index.php";
+                    }
+    
+                    
                       echo'
-                      
+                      <a href="'.$tempHref.'"> 
+                      <i class="fa-solid fa-user"></i>
+                      <div class="avata-name">'.$_SESSION['user'].'</div>
+                      </a>
                       <a onclick="oCart()" style="width:auto;"> 
                       <i class="fa-solid fa-cart-shopping"></i>
                       <div class="title">Giỏ Hàng</div>
                       </a>
                       
                       <a href="model/logout.php">
-                        <i class="fa-regular fa-user"></i>
+                      <i class="fa-solid fa-right-from-bracket"></i>
                         <div class="title">Đăng Xuất</div>
                        </a>
                       '   ;     
