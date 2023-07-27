@@ -11,7 +11,7 @@
         echo
 
     '<a href="?page=details&id='. $item["id_product"].'"><div class="item">
-                <img src="' . $item["thumbnail"] . '" alt="">
+                <img src="public/img/products/' . $item["thumbnail"] . '" alt="">
                 <div class="content">
                     <div class="title">
                        ' . $item["name_product"] . '

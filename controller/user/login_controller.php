@@ -3,6 +3,7 @@
 session_start();
 require('../../model/config/config.php');
 require('../../model/config/conection.php');
+require('../../model/cart/fcart.php');
 
 $username = '';
 $password = '';
@@ -14,6 +15,7 @@ if(isset($_POST['login'])){
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
       $_SESSION["user"] = $username;
+      $_SESSION["cart"] = $username;
       while($row = mysqli_fetch_assoc($result)) {
         $level = $row['level'];
         if($level==0){

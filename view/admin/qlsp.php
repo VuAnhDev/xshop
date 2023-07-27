@@ -14,7 +14,7 @@ $data = getDataSQL($sql);
   ?>
 </h2>
 
-<form action="controller/admin/qlsp.php" method="POST" class="admin-form">
+<form action="controller/admin/qlsp.php" method="POST" class="admin-form" enctype="multipart/form-data">
 
   <table class="tbl-qlsp">
 
@@ -59,12 +59,13 @@ $data = getDataSQL($sql);
             <td>
               <input type="text" value="' . $price . '" name="price' . $id . '">
             </td>
-            <td>
-                <img src="public/img/products/3.png" alt="Thêm ảnh mới" onclick= "addimg()" >        
+            <td class = "box-img">
+                <img src="public/img/products/'.$thumb.'" alt="Thêm ảnh mới" onclick= "addimg('.$id.')"> 
+                <input type="file" name="file' . $id . '"  class="box-input">       
             </td>
             <td> <input type="text" value="' . $numb . '" name="numb' . $id . '"></td>
             <td>
-                  <select name="cate' . $id . '" id="cate">  
+                  <select name="cate' . $id . '">  
                   ';
 
 
@@ -96,7 +97,7 @@ $data = getDataSQL($sql);
 </form>
 
 <div class="admin-modal addproduct">
-  <form action="controller/admin/qlsp.php" method="POST" class="add-form">
+  <form action="controller/admin/qlsp.php" method="POST" class="add-form" enctype="multipart/form-data">
     <div>
       <h2 class="title">Thêm sản phẩm mới</h2>
     </div>
@@ -114,14 +115,15 @@ $data = getDataSQL($sql);
     </div>
     <div>
       <label for="img">Ảnh sản phẩm</label>
-      <input type="text" name="img">
+      <input type="file" name="img" >
     </div>
     <div>
       <label for="numb">Số lượng</label>
-      <input type="text" name="numb">
+      <input type="text" name="numb" >
     </div>
     <div>
-      <select name="cate" id="cate">
+      <label>Chọn danh mục sản phẩm:</label>
+      <select name="cate">
         <option>...</option>
         <?php $sql2 = "SELECT * FROM categorys ";
         $cate = getCate($sql2);
@@ -135,7 +137,7 @@ $data = getDataSQL($sql);
     <div>
 
     </div>
-    <button type="submit" name="add"> Thêm danh mục</button>
+    <button type="submit" name="add"> Thêm sản phẩm</button>
   </form>
 </div>
 
@@ -152,7 +154,6 @@ $data = getDataSQL($sql);
   }
 
 
-  function addimg() {
-    alert("123");
+  function addimg($value) {
   }
 </script>

@@ -12,6 +12,10 @@
         document.getElementById('id01').style.display='block';
         </script>";
     }
+
+
+        
+      
     ?>
     <div class="box">
         <div class="logo">
@@ -20,23 +24,27 @@
         <div class="menu">
             <ul>
                 <a href="index.php">
-                    <li class="active">Trang Chủ</li>
+                    <li class="<?php if(!isset($_GET['page'])){
+            echo'active';
+        }; ?>">Trang Chủ</li>
                 </a>
                 <a href="?page=danhsach" >
-                    <li>
-                        Danh sách sản phẩm
-                        <ul class="cate-list">
-
-                        </ul>
-                    
+                    <li class="<?php if($_GET['page'] === 'danhsach'){
+            echo'active';
+        }; ?>" >  Danh sách sản phẩm                   
                     </li>   
                 </a>
                 <a href="?page=contact">
-                    <li>Liên Hệ</li>
+                <li class="<?php if($_GET['page'] === 'contact'){
+            echo'active';
+        }; ?>" >Liên Hệ</li>
                 </a>
                 <a href="?page=help">
-                    <li>Hỗ Trợ</li>
+                <li class="<?php if($_GET['page'] === 'help'){
+            echo'active';
+        }; ?>" >Hỗ Trợ</li>
                 </a>
+            </ul>
 
         </div>
         <div class="shop">

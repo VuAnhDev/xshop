@@ -227,4 +227,49 @@ text-align: center;
   .qlsp-option button:hover {
     scale: 1.3;
   }
+.box-img {
+  position: relative;
+}
+.box-img .box-input {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+  color: transparent;
+}
+.box-img .box-input:hover {
+  opacity: 1;
+}
+.addproduct div {
+  display:grid;
+  grid-template-columns: 30% 1fr;
+}
 
+.addproduct div:first-child h2{
+  color: #fcb116;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  text-align: center;
+}
+.addproduct select {
+  width: 100%;
+  border: none;
+  outline: none;
+  height: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 80%;
+}
+
+.addproduct button {
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.cate-list {
+  display: none;
+}
