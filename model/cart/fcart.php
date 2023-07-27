@@ -37,14 +37,14 @@ function updateCart($name, $value){
         $conn->close();
 }
 
-function getCart($name){
+function getValueCart($name){
         $conn = new mysqli(HOST,USERNAME,PASSWORD,DB);
         if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
         }
         $conn -> set_charset("utf8"); 
 
-        $sql = "SELECT * FROM cart WHERE cart_name = '$name'";
+        $sql = "SELECT cart_value FROM cart WHERE cart_name = '$name'";
         $result = $conn->query($sql);
         $data = [];
         if ($result->num_rows > 0) {

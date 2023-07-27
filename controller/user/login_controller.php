@@ -10,12 +10,10 @@ $password = '';
 if(isset($_POST['login'])){
     $username = $_POST['username'];
     $password = $_POST['password'];    
-
     $sql = "SELECT username, password, level FROM user WHERE username = '$username' AND password = '$password'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
       $_SESSION["user"] = $username;
-      $_SESSION["cart"] = $username;
       while($row = mysqli_fetch_assoc($result)) {
         $level = $row['level'];
         if($level==0){
@@ -24,15 +22,17 @@ if(isset($_POST['login'])){
         } else {
           $_SESSION['level'] = "1";
           echo'dang nhap thanhcong';
-      
           header('location:../../index.php?in');
         }
       }
+      $procart =  getValueCart($username);
+      $_SESSION["cart"] = json_decode( $procart[0]['cart_value'],true);
         
       } else {
         $_SESSION["thongBaoDN"] = "Sai tên ĐN hoặc MK";
         header('location:../../index.php?login');
       }
       $conn->close();
-}
+
+}     
     ?>

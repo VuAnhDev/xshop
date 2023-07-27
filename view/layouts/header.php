@@ -11,10 +11,7 @@
         <script>
         document.getElementById('id01').style.display='block';
         </script>";
-    }
-
-
-        
+    }        
       
     ?>
     <div class="box">
@@ -31,7 +28,7 @@
                 <a href="?page=danhsach" >
                     <li class="<?php if($_GET['page'] === 'danhsach'){
             echo'active';
-        }; ?>" >  Danh sách sản phẩm                   
+        }; ?>" >  Danh sách sản phẩm   <?php echo $total ?>                
                     </li>   
                 </a>
                 <a href="?page=contact">
