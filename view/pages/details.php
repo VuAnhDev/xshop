@@ -93,8 +93,9 @@ if ($result->num_rows > 0) {
 <script>
         function addcart(id){
             $.post("controller/cart.php", {'id': id}, function(data, status){
-                alert("Data: " + data + "\nStatus: " + status);
+                // alert("Data: " + data + "\nStatus: " + status);
             });
+            location.reload();
+            alert("Thêm vào giỏ hàng thành công");
         }
-
 </script>

@@ -29,7 +29,7 @@ function updateCart($name, $value){
         
         $sql = "UPDATE cart SET cart_value = '$value' WHERE cart_name = '$name'";
         if ($conn->query($sql) === TRUE) {
-        echo "Record updated successfully";
+
         } else {
         echo "Error updating record: " . $conn->error;
         }

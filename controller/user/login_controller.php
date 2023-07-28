@@ -25,6 +25,7 @@ if(isset($_POST['login'])){
           header('location:../../index.php?in');
         }
       }
+      
       $procart =  getValueCart($username);
       $_SESSION["cart"] = json_decode( $procart[0]['cart_value'],true);
         

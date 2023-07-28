@@ -28,7 +28,7 @@
                 <a href="?page=danhsach" >
                     <li class="<?php if($_GET['page'] === 'danhsach'){
             echo'active';
-        }; ?>" >  Danh sách sản phẩm   <?php echo $total ?>                
+        }; ?>" >  Danh sách sản phẩm              
                     </li>   
                 </a>
                 <a href="?page=contact">

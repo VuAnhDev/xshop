@@ -18,27 +18,49 @@ if (isset($_POST['id'])) {
 
             if (!isset($_SESSION['cart'][$id])) {
                 $cart_data = array(
+                    "idc" => $row['id_product'],
                     "name_products" => $row['name_product'],
-                    "img" =>$row['thumbnail'],
+                    "img" => $row['thumbnail'],
                     "numbs" => 1,
                     "price" => $row['price_product'],
+
                 );
                 $_SESSION['cart'][$id] = $cart_data;
             } else {
-                $cart_data =  $_SESSION['cart'][$id];
+                $cart_data = $_SESSION['cart'][$id];
                 $cart_data = array(
+                    "idc" => $row['id_product'],
                     "name_products" => $row['name_product'],
-                    "img" =>$row['thumbnail'],
-                    "numbs" => (int)($cart_data["numbs"]+1),
+                    "img" => $row['thumbnail'],
+                    "numbs" => (int) ($cart_data["numbs"] + 1),
                     "price" => $row['price_product'],
                 );
                 $_SESSION['cart'][$id] = $cart_data;
+                echo $cart_data["numbs"];
             }
         }
-    }  
+
+        $value = json_encode($_SESSION['cart']);
+        $namecart = $_SESSION['user'];
+        updateCart($namecart, $value);
+    }
 }
-$value = json_encode($_SESSION['cart']);
-$namecart = $_SESSION['user'];
-updateCart($namecart, $value);
-var_dump( $_SESSION);
+if (isset($_POST["idc"])) {
+    $idc = $_POST["idc"];
+    $cart_data = $_SESSION['cart'][$idc];
+    if ($cart_data["numbs"] > 1) {
+        $cart_data["numbs"] =  (int) ($cart_data["numbs"] - 1) ;
+        
+        $_SESSION['cart'][$idc] = $cart_data;
+        echo $cart_data["numbs"];
+        
+    }else {
+       unset($_SESSION['cart'][$idc]);
+    }
+    $value = json_encode($_SESSION['cart']);
+    $namecart = $_SESSION['user'];
+    updateCart($namecart, $value);
+    var_dump($_SESSION['cart']);
+}
+
 ?>

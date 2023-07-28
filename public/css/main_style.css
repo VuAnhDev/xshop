@@ -556,3 +556,24 @@ padding: 0 10px;
   background: var(--main-color); 
   border-radius: 10px;
 }
+
+.checkout-container {
+  width: 1000px;
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 80vh;
+  background-color: #fff2d9;
+  display: flex;
+}
+.checkout-container .checkout-left {
+  padding-top: 50px;
+  width: 33%;
+  color: #000;
+  text-align: center;
+  font-size: xxx-large;
+  font-weight: bold;
+}
+.checkout-container .checkout-right {
+  width: 66%;
+  border-left: 100px solid var(--backgroundcolor-main);
+}
