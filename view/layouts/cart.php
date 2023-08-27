@@ -15,7 +15,7 @@
 
         <?php
         $total = 0;
-        if (isset($_SESSION["cart"])) {
+        if (!empty($_SESSION["cart"])) {
           if (count($_SESSION['cart']) > 0) {
             $sl = 0;
             
@@ -26,7 +26,7 @@
               $sl += $item['numbs'];
               $total += $price * $item['numbs'];
               echo '
-            <div class="cart-item">
+            <div class="cart-item" id = "'. $item["idc"] .'">
             <img src="public/img/products/' . $item["img"] . '" alt="">
             <div class="title">' . $item["name_products"] . '
             <p>
@@ -40,19 +40,13 @@
           </div>
             ';
             }
-           
+           $_SESSION['total'] = $total;
           }
           
         } else {
-          echo "";
+          echo "<h2>Giỏ hàng trống</h2>";
         }
         ?>
-
-
-
-
-
-
       </div>
 
 
@@ -69,7 +63,12 @@
       <div class="cart-btn">
         <button type="button" onclick="document.getElementById('cart').style.display='none'"
           class="cancelbtn">Cancel</button>
-        <a href="checkout.php"><button class="by">Mua Hàng</button></a>
+
+        <?php if($total > 0){ ?>
+          <a href="checkout.php"><button class="by">Mua Hàng</button></a>
+        <?php }else{ ?>
+          <a onclick = "alert('Chưa có gì trong giỏ hàng')"><button class="by">Mua Hàng</button></a>
+        <?php }?>
       </div>
 
     </div>
@@ -88,13 +87,19 @@
         function flus(id){
             $.post("controller/cart.php", {'id': id}, function(data, status){
                 // alert("Data: " + data + "\nStatus: " + status);
-              $('#numb'+id).text(data);
-             
+                let result = data.split('/');
+              $('#numb'+id).text(result[0]);
+              $('#total').text(result[1]);
             });
         }
         function minus(idc){
             $.post("controller/cart.php", {'idc': idc, 'ac':'minus'}, function(data, status){
-                $('#numb'+idc).text(data);
+              let result = data.split('/');
+                $('#numb'+idc).text(result[0]);
+                $('#total').text(result[1]);
+                if(result[2]==='false'){
+                  $('#'+idc).empty();
+                }
             });
         }
 </script>

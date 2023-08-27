@@ -129,7 +129,7 @@ header .menu ul a .active {
     top:20%;
     left: 5%;
     background-color: #ffeece57;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(100px);
     width: 90%;
     border-radius: 40px;
     display: grid;
@@ -576,4 +576,25 @@ padding: 0 10px;
 .checkout-container .checkout-right {
   width: 66%;
   border-left: 100px solid var(--backgroundcolor-main);
+  padding-top: 50px;
+  text-align: center;
+}
+.checkout-container .checkout-right div {
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 25% auto;
+  font-weight: bold;
+  font-size: large;
+  margin-top: 30px;
+}
+.checkout-container .checkout-right div input {
+  outline: none;
+  border: none;
+}
+.checkout-container .checkout-right form button {
+  width: 80%;
+  margin-top: 50px;
+  height: 50px;
 }

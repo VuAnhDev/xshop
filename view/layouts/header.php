@@ -87,4 +87,7 @@
             ?>                                          
         </div>
     </div>
+    <?php if(isset($_SESSION['thongbao'])){echo '<h1 style="text-align:center; color:blue;">'.$_SESSION['thongbao'].'</h1>';}
+    unset($_SESSION['thongbao']);
+    ?>
 </header>

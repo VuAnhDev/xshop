@@ -44,9 +44,9 @@
             ' . number_format(" $price", 0, ",", ".") . ' VNĐ</p>
             </div>
             <div class="option">
-              <a>-</a>
+       
               <h3>' . $item['numbs'] . '</h3>
-              <a>+</a>
+            
             </div>
           </div>
             ';
@@ -63,7 +63,39 @@
 
         </div>
         <div class="checkout-right">
-            
+            <h2>Thông tin thanh toán</h2>
+           
+            <form action="controller/checkout.php" class="fcheck-out" method="post">
+
+            <div class="total">
+                <label>Tổng tiền:</label>
+                <label><?php 
+                $t = $_SESSION['total'];
+                echo number_format("$t", 0, ",", ".") ?> VNĐ
+            <input name = "total" value="<?php echo$t; ?>" style="display: none;">    
+            </label>
+            </div>
+
+                <div><label for="name">
+                    Họ và tên:
+                </label>
+                <input type="text" name= "name" required> </div>
+                <div><label for="phone">
+                    Số điện thoại:
+                </label>
+                <input type="text" name= "phone" required> </div>
+                <div><label for="email">
+                    Email:
+                </label>
+                <input type="text" name= "email" required> </div>
+                <div><label for="loaction">
+                    Địa chỉ:
+                </label>
+                <input type="text" name= "location" required> </div>
+
+                <button type="submit" name= "submit">Thanh toán</button>
+                
+            </form>
         </div>
 
 
