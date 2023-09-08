@@ -19,7 +19,13 @@
         if(isset($_GET["option"])){
             $option = $_GET["option"];
             
-            if($option == "qltk"){
+            if($option == "viewcart"){
+                $active="4";
+            }
+            elseif($option == "qlod"){
+                $active="4";
+            }
+            elseif($option == "qltk"){
                 $active="3";
             }
             elseif($option == "qlsp"){
@@ -46,6 +52,9 @@
         <li class="admin-menu-item <?php if($active==="3"){echo" active";}?>" name="3">
             <a href="index.php?page=admin&option=qltk">Quản lý tài khoản</a>
         </li>
+        <li class="admin-menu-item <?php if($active==="4"){echo" active";}?>" name="3">
+            <a href="index.php?page=admin&option=qlod">Quản lý đơn đặt</a>
+        </li>
     </ul>  
 </div>
 
@@ -57,8 +66,14 @@
             if($option == "qltk"){
                 include('qltk.php');
             }
+            elseif($option == "viewcart"){
+                include('viewcart.php');
+            }           
             elseif($option == "qlsp"){
                 include('qlsp.php');
+            }           
+            elseif($option == "qlod"){
+                include('qlod.php');
             }           
             else{
                 include('qldm.php');

@@ -2,24 +2,6 @@
 
 
 
-/**
- * Su dung cho lenh: insert/update/delete
- */
-function execute($sql) {
-	// Them du lieu vao database
-	//B1. Mo ket noi toi database
-	$conn = mysqli_connect(HOST, USERNAME, PASSWORD, DB);
-	mysqli_set_charset($conn, 'utf8');
-
-	//B2. Thuc hien truy van insert
-	mysqli_query($conn, $sql);
-
-	//B3. Dong ket noi database
-	mysqli_close($conn);
-}
-/**
- * Su dung cho lenh: select
- */
 
  function getDataSQL($sql, $single=false)
  {

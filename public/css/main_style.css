@@ -20,7 +20,7 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1;
+    z-index: 9999;
     background-color: var(--backgroundcolor-main);
     backdrop-filter: blur(20px);
 }
@@ -36,8 +36,9 @@ header .box div {
     align-items: center;
 }
 header .logo img{
+        padding-top: 5px;
         width: 50px;
-        height: 50px;
+        height: 65px;
         object-fit: cover;
         }
 header  .shop {  
@@ -60,25 +61,68 @@ header .shop .title{
 }
 header .menu {
     justify-content: center;
-}
-header .menu ul {
-    padding: 0;
-    list-style: none;
-}
-header .menu ul a li {
-    display: inline-block;
-    margin: 0 10px;
-    font-weight: bold;
-    color: #000;
+    align-items: center;
 }
 
-header .menu ul a li:hover,
-header .menu ul a .active {
-    color: #ffab59;
+ul.nav {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
 }
+ul.nav li{
+  position: relative;
+  font-size:  larger;
+  font-weight: bold;
+}
+ul.nav li a{
+  padding: 5px;
+}
+ul.nav li.active {
+  background-color: var(--main-color);
+  border-radius: 10px;
+}
+ul.nav li a:hover {
+  border-radius: 10px;
+  background-color: var(--main-color);
+}
+ul.nav li:hover .sub-menu{
+  display: block;
+}
+ul.sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  list-style: none;
+  padding: 0;
+  backdrop-filter: blur(80%);
+  border-radius: 10px;
+  display: none;
+}
+ul.sub-menu li {
+  border-radius: 10px;
+  background-color: var(--main-color);
+  width: 100%;
+  text-align: left;
+  margin-top: 10px;
 
-
-
+}
+ul.sub-menu li a {
+  display: block;
+ 
+  text-decoration: none;
+}
+ul.sub-menu li a:hover {
+  background-color: var(--backgroundcolor-main);
+  color: #000;
+}
+ul.sub-menu li:last-child{
+  display: none;
+}
 .container {
     width: 1000px;
     max-width: 100%;
@@ -597,4 +641,37 @@ padding: 0 10px;
   width: 80%;
   margin-top: 50px;
   height: 50px;
+}
+
+.search form{
+  position: absolute;
+  left: 23%;
+  display: flex;
+  gap: 20px;
+}
+.search button {
+  border-radius: 50%;
+  font-size: larger;
+  text-align: #000;
+  cursor: pointer;
+  position: relative;
+}
+/* .search button::after{
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+} */
+.search input {
+ width: 150px;
+ border-radius: 10px;
+ outline: none;
+ border: none;
+}
+.search form button:hover ~ input
+ {
+  display: block;
 }

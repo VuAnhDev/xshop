@@ -5,16 +5,16 @@ $sql = "SELECT * FROM products";
 $data = getDataSQL($sql);
 
 ?>
-<h2 class="messs">
-  <?php
-  if (isset($_SESSION['thongbao'])) {
-    echo $_SESSION['thongbao'];
-    unset($_SESSION['thongbao']);
-  }
-  ?>
-</h2>
 
 <form action="controller/admin/qlsp.php" method="POST" class="admin-form" enctype="multipart/form-data">
+  <h2 class="messs">
+    <?php
+    if (isset($_SESSION['thongbao'])) {
+      echo $_SESSION['thongbao'];
+      unset($_SESSION['thongbao']);
+    }
+    ?>
+  </h2>
 
   <table class="tbl-qlsp">
 
@@ -30,10 +30,6 @@ $data = getDataSQL($sql);
       <th>Danh mục</th>
       <th>OPTION</th>
     </tr>
-
-
-
-
     <?php
     foreach ($data as $item) {
       $id = $item['id_product'];
@@ -43,7 +39,6 @@ $data = getDataSQL($sql);
       $thumb = $item['thumbnail'];
       $numb = $item['quantity'];
       $idcate = $item['id_category'];
-
       echo '
           <tr>
            

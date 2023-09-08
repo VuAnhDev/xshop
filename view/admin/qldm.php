@@ -3,17 +3,18 @@ include_once("model/dbhelp/getdata.php");
 $sql = "SELECT * FROM categorys";
 $data = getDataSQL($sql);
 ?>
-<h2 class="messs">
-  <?php
-  if(isset($_SESSION['thongbao'])){
-    echo $_SESSION['thongbao'];
-    unset($_SESSION['thongbao']);
-  }
-  ?>
-</h2>
 <form action="controller/admin/qldm.php" method="POST" class="admin-form">
-
+  <h2 class="messs">
+    <?php
+    if(isset($_SESSION['thongbao'])){
+      echo $_SESSION['thongbao'];
+      unset($_SESSION['thongbao']);
+    }
+    ?>
+  </h2>
+  
   <table class="admin-table">
+    <button type="button" onclick="oModal()">Thêm danh mục mới</button>
     <tr>
       <th>Tên danh mục</th>
       <th>Chức năng</th>
@@ -44,7 +45,6 @@ $data = getDataSQL($sql);
       <td>
       </td> 
       <td>
-        <button type="button" onclick="oModal()">Thêm danh mục mới</button>
       </td>
     </tr>
   </table>

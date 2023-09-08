@@ -3,7 +3,7 @@
 session_start();
 require('../../model/config/config.php');
 require('../../model/config/conection.php');
-require('../../model/cart/fcart.php');
+require('../../model/fcart.php');
 
 $username = '';
 $password = '';

@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once('../model/config/config.php');
-include_once('../model/cart/fcart.php');
+include_once('../model/fcart.php');
 
 
 if (isset($_POST['id'])) {

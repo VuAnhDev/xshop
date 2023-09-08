@@ -1,9 +1,15 @@
 <div class="container">
 <?php
 $page ='';
+$key="";
 
-if (isset($_GET['page'])){
-    $page = $_GET['page'];
+if (!empty($_GET['key'])){
+    $key = $_GET['key'];
+    $page = "search";
+}else{
+    if (isset($_GET['page'])){
+        $page = $_GET['page'];
+    }
 }
 
 if($page == 'details'){
@@ -13,11 +19,19 @@ if($page == 'details'){
 elseif($page == 'danhsach'){
     include_once('view/pages/danhsach.php');
 }
+elseif($page == 'contact'){
+    include_once('view/pages/contact.php');
+}
+elseif($page == 'search'){
+    include_once('view/pages/search.php');
+}
+elseif($page == 'about'){
+    include_once('view/pages/about.php');
+}
 
 elseif($page == 'admin'){
     include_once('view/admin/index.php');
 }
-
 
 else{
     

@@ -3,16 +3,16 @@ include_once("model/dbhelp/getdata.php");
 $sql = "SELECT * FROM user";
 $data = getDataSQL($sql);
 ?>
-<h2 class="messs">
-  <?php
-  if(isset($_SESSION['thongbao'])){
-    echo $_SESSION['thongbao'];
-    unset($_SESSION['thongbao']);
-  }
-  ?>
-</h2>
 
 <form action="controller/admin/qltk.php" method="POST" class="admin-form">
+  <h2 class="messs">
+    <?php
+    if(isset($_SESSION['thongbao'])){
+      echo $_SESSION['thongbao'];
+      unset($_SESSION['thongbao']);
+    }
+    ?>
+  </h2>
 
   <table class="admin-table">
     <tr>
